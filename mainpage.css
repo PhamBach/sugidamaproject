@@ -76,7 +76,7 @@ html{
 .social-medias{
     display:inline-block;
     height:100vh;
-    position:
+    
 }
 .social-medias img{
     display:flex;
@@ -86,14 +86,24 @@ html{
     max-width:6vw;
     
 }
+.home-hero{
+    position:relative;
+    width:100%;
+    background-image:url('/background-image/newhomehero.jpg');
+    height:60vh;
+    object-fit:cover;
+    background-size:cover;
+    background-position:right 0px top -190px;
+}
+
 .menu{
     display:grid;
     grid-template-columns:1fr 1fr 1fr 1fr;
-   
+    z-index:0;
     position:relative;
     flex-grow:1;
     height:2vh;
-    font-size:1vw;
+    font-size:1.2rem;
       
     
     
@@ -197,9 +207,12 @@ html{
     background-color:gray;
     display:flex;
     flex-direction:column;
-    justify-content:space-evenly;
+    justify-content:center;
     align-items:center;
-    width:clamp(30px,20vw,30vw);
+    width:30rem;
+    height:12rem;
+    flex-wrap:wrap;
+    margin-top:30px;
     position:relative;
     font-size:1.5rem;
     font-family:'Noto Serif JP', serif;
@@ -208,7 +221,7 @@ html{
 }
 .Soba-menu p{
     text-align:center;
-    font-size:1.2rem;
+    font-size:2rem;
     font-family:EB-Garamond;
     color:gold;
     
@@ -220,9 +233,32 @@ html{
 .price{
     display:flex;
     position:absolute;
-    font-size:1rem;
+    font-size:1.5rem;
     bottom:0;
     color: var(--supporting-clr);
+}
+.hamburger-menu{
+    display:none;
+    z-index: 100;
+    
+}
+.hamburger-drop-down{
+    display:none;
+    gap:10px;
+    position: absolute;
+    top: 100%; /* Position below the image */
+    left: 0;
+    background-color:black; /* Semi-transparent background */
+    color: white;
+    padding: 40px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 100000; /* Ensure it appears above other content */
+    flex-direction:column;
+    font-family:'Times New Roman', Times, serif;
+}
+.hamburger-drop-down>div{
+    z-index: 10000;
 }
 
 
@@ -240,6 +276,42 @@ html{
     .Menu1 img{
         
     }
+    .hamburger-menu{
+        display:flex;
+        position:relative;
+        width:6rem;
+        align-items:center;
+
+        
+    }
+
+    .hamburger-menu img{
+        width:3rem;
+        height:3rem;
+        display:flex;
+        position:relative;
+
+    }
+    
+    .hamburger-menu:hover .hamburger-drop-down{
+        display:inline-block;
+        position:relative;
+        top:110px;
+        width:100%;
+        left:-100px;
+        padding-right:260px;
+        padding-left:100px;
+
+        
+    }
+    .hamburger-menu:active ~ .menu,
+.hamburger-menu:active ~ .menu > * {
+    
+    border: none !important; /* Remove any borders */
+    background: none !important; /* Remove any background */
+}
+        
+    }
     .media-logos img{
         max-width:15vw;
         height:100%;                                        
@@ -248,111 +320,14 @@ html{
     html{
         font-size:12px;
     }
-    .menu{
-    display:grid;
-    grid-template-columns:1fr 1fr 1fr 1fr;
+    #header-mobile{
+        display:none;
+    }
+    
+    
    
-    position:relative;
-    flex-grow:1;
-    height:2vh;
-    font-size:3vw;
-    }
-    .Soba-menu{
-    display:flex;
-    justify-content:space-between;
-    justify-items:center;
-    gap:10px;
+   
 
-    flex-direction:column;
-    justify-items:center;
-    margin-left:5vw;
-    margin-right:5vw;
-    position:relative;
-        
-    }
-    .Soba-menu>div{
-        border-radius:20px;
-        background-color:gray;
-        display:flex;
-        flex-direction:row;
-        justify-content:space-evenly;
-        align-items:center;
-        width:90%;
-        position:relative;
-        font-size:1.5rem;
-        font-family:'Noto Serif JP', serif;
-        background-color:var(--primary-clr);
-    
 
-    
-    }
-    .Soba-menu img{
-        top:1px;
-    }
-    
-    .Soba-menu p{
-        font-size:2rem;
-    }
-}
-@media (min-width: 601px) and (max-width: 1024px) {
-    html{
-        font-size:10px;
-    }
-    .header {
-        font-size: clamp(18px, 2vw, 24px);
-    }
-    
-    
-    .media-logos img {
-        max-width: 18vw;
-    }
-
-    .social-medias {
-        gap: 1vw;
-        width: 12%;
-        top: 50%;
-        right: 20px;
-    }
-
-    .search-box {
-        font-size: 2vw;
-        width: 20vw;
-        right: 20px;
-    }
-}
 
 /* Media Query for Desktop (large screens) */
-@media (min-width: 1280px) {
-    .header {
-        font-size: clamp(1vw, 2vw, 25px);
-    }
-
-    .media-logos img {
-        max-width: 14vw;
-    }
-
-    .social-medias img {
-        gap: 1vw;
-        width: 2vw;
-        top: 50%;
-        right: 0;
-    }
-
-    .search-box {
-        font-size: 1vw;
-        width: 20vw;
-        right: 0;
-    }
-    .first-paragaph{
-    margin-top:1.25rem;
-    width:39vw;
-    word-wrap:break-word;
-    font-size:clamp(1.5vw,2.1vw,2.3vw);
-    line-height:4vh;
-    display:block;
-    margin-left:10px;
-    font-weight:400;
-    color:white;
-    background-color:rgba(0,0,0,0.5)
-    }
-}
