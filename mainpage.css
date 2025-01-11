@@ -104,6 +104,7 @@ html{
     flex-grow:1;
     height:2vh;
     font-size:1.2rem;
+    margin-bottom:10px;
       
     
     
@@ -176,6 +177,7 @@ html{
     margin-top:10px;
 }
 .Hero>div{
+    
    
 }
 .Hero img{
@@ -246,19 +248,17 @@ html{
     display:none;
     gap:10px;
     position: absolute;
-    top: 100%; /* Position below the image */
+    /* Position below the image */
     left: 0;
     background-color:black; /* Semi-transparent background */
     color: white;
     padding: 40px;
-    width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 100000; /* Ensure it appears above other content */
-    flex-direction:column;
+    z-index: 1000; /* Ensure it appears above other content */
     font-family:'Times New Roman', Times, serif;
 }
 .hamburger-drop-down>div{
-    z-index: 10000;
+    z-index: 1000;
 }
 
 
@@ -279,8 +279,10 @@ html{
     .hamburger-menu{
         display:flex;
         position:relative;
+        
         width:6rem;
         align-items:center;
+        z-index: 1000;
 
         
     }
@@ -290,19 +292,24 @@ html{
         height:3rem;
         display:flex;
         position:relative;
+        z-index: 10;
 
     }
     
-    .hamburger-menu:hover .hamburger-drop-down{
-        display:inline-block;
-        position:relative;
-        top:110px;
-        width:100%;
-        left:-100px;
-        padding-right:260px;
-        padding-left:100px;
+    .hamburger-container:hover .hamburger-drop-down{
+        display:block;
+        
 
         
+    }
+    .hamburger-container{
+        
+    }
+    .hamburger-drop-down{
+        position:absolute;
+        left:0;
+        top:0;
+        width:80vw;
     }
     .hamburger-menu:active ~ .menu,
 .hamburger-menu:active ~ .menu > * {
@@ -322,6 +329,14 @@ html{
     }
     #header-mobile{
         display:none;
+    }
+    .home-hero{
+        position:relative;
+        z-index:-1;
+    }
+    .menu{
+        position:relative;
+        z-index :-1;
     }
     
     
